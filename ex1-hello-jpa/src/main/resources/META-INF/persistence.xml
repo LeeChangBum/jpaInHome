@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="hello">
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/><!--어떠한 데이터베이스와 연결되는가-->
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/><!--해당 데이터베이스의 언어를 사용하겠다는 의미-->
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/><!--query를 보여줘라-->
+            <property name="hibernate.format_sql" value="true"/><!--query를 "이쁘게" 보여줘라-->
+            <property name="hibernate.use_sql_comments" value="true"/><!--query를 설명해줘라-->
+            <!--<property name="hibernate.jdbc.batch_size" value="10"/>//value만큼 SQL구문을 만들어 한방에 데이터베이스에 보낸다.-->
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+        </properties>
+    </persistence-unit>
+</persistence>
