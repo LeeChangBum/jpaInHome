@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'CBLEE'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()//library를 다운 받는곳(사이트) 필요하면 특정 사이트 URL넣을 수 있다.
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//implementation 'org.springframework.boot:spring-boot-starter-jdbc'//자바가 DB와의 연결을 위한 dependency
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'//jdbc도 포함함
+	runtimeOnly 'com.h2database:h2'//DB와 붙을 때 데이터베이스가 제공하는 클라이언트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'//test library
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
